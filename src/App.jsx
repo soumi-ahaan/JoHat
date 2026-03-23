@@ -9,6 +9,7 @@ import HomeComponents from "./Components/Home/HomeComponents";
 import AboutComponents from "./Components/About/AboutComponents";
 import ServiceComponents from "./Components/Service/ServiceComponents";
 import ContactComponents from "./Components/Contact/ContactComponents";
+import PropertyDetails from "./Components/PropertyDetails/PropertyDetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<AboutComponents />} />
         <Route path="/service" element={<ServiceComponents />} />
         <Route path="/contact" element={<ContactComponents />} />
+        <Route path="/property/:id" element={<PropertyDetails />} />
       </Routes>
       <Footer />
     </>
