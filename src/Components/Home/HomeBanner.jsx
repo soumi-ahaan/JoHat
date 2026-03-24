@@ -1,4 +1,4 @@
-import homebanner from "../../assets/homebanner.png";
+import homebanner from "../../assets/homebanner.webp";
 
 export default function Hero() {
     return (
