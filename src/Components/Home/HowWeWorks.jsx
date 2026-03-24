@@ -70,7 +70,7 @@ const HowWeWorks = () => {
                     }`}
                 >
 
-                  <h3 className="font-bold uppercase text-[12px] md:text-[13px] lg:text-[20px] xl:text-[23px] tracking-wide font-designer">
+                  <h3 className="font-normal uppercase text-[12px] md:text-[13px] lg:text-[20px] xl:text-[23px] tracking-wide font-designer">
                     {step.id}. {step.title}
                   </h3>
 
