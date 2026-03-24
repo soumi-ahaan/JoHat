@@ -5,7 +5,7 @@ import RecentSales from './RecentSales'
 import HowWeWorks from './HowWeWorks'
 import Services from './Services'
 import WhoWeAre from './WhoWeAre'
-import Testimonial from './Testimonial'
+import HomeownerStories from './HomeownerStories'
 import FAQSection from './FaqSection'
 
 const HomeComponents = () => {
@@ -17,7 +17,7 @@ const HomeComponents = () => {
       <FeatureProperties/>
       <HowWeWorks/>
       <RecentSales/>
-      <Testimonial/>
+      <HomeownerStories/>
       <FAQSection/>
 
     </div>
