@@ -36,19 +36,19 @@ const RecentSales = () => {
 
   return (
     <div className="bg-[#f5f5f5] py-16">
-      <div className="max-w-[1440px] mx-auto px-[60px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px]">
         {/* HEADING */}
-        <h2 className="text-center text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
+        <h2 className="text-center text-xl md:text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
           Our Recent Sales
         </h2>
 
-        <p className="text-center text-gray-500 mt-3 font-[#333333] max-w-[700px] mx-auto text-[16px] font-lato">
+        <p className="text-center text-gray-500 mt-3 font-[#333333] max-w-[700px] mx-auto text-base">
           We take pride in helping property investors turn great opportunities
           into profitable ventures.
         </p>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mt-[30px]">
           {data.slice(0, 4).map((item) => {
             const image = item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
@@ -56,7 +56,7 @@ const RecentSales = () => {
               <div
                 key={item.id}
                 onClick={() => navigate(`/property/${item.id}`)}
-                className="relative rounded-xl overflow-hidden cursor-pointer group"
+                className="relative  overflow-hidden cursor-pointer group"
               >
                 {/* IMAGE */}
                 <img
@@ -74,11 +74,11 @@ const RecentSales = () => {
                 </div>
 
                 {/* CONTENT */}
-                <div className="absolute bottom-0 w-full p-6 text-white">
+                <div className="absolute bottom-0 w-full px-4 py-5 text-white">
                   {/* TOP ROW */}
-                  <div className="flex justify-between items-center">
+                  <div className="flex flex-col lg:flex-row justify-between lg:items-center">
                     {/* TITLE */}
-                    <h3 className="text-lg font-medium">
+                    <h3 className="text-base lg:text-[22px] font-medium">
                       {item.title.rendered}
                     </h3>
 
@@ -110,7 +110,7 @@ const RecentSales = () => {
                   {/* SOLD DATE */}
                   <p className="text-sm mt-2 text-gray-300">
                     Sold on:{" "}
-                    <span className="font-bold italic text-white text-[18px] font-designer">
+                    <span className="font-bold italic text-white text-xl lg:text-[25px]              font-designer">
                       {formatDate(item.acf?.sold_date)}
                     </span>
                   </p>

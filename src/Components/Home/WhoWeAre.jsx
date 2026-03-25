@@ -8,7 +8,7 @@ const WhoWeAre = () => {
     <section className="bg-[#f4f1ee] py-20 lg:py-40 px-4">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-15 relative">
 
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-center md:items-start">
 
           {/* LEFT IMAGE */}
           {/* 1. Main Container: Fixed to your SVG's 453:539 aspect ratio */}
@@ -42,7 +42,7 @@ const WhoWeAre = () => {
 
           {/* CENTER CONTENT */}
           <div className="md:max-w-[300px] lg:max-w-[550px] text-center md:text-left mt-0 lg:mt-4">
-            <h5 className="uppercase tracking-widest text-[#1c1c1c] font-bold font-designer text-[26px] lg:text-[35px] mb-4">
+            <h5 className="uppercase tracking-widest text-[#1c1c1c] font-bold font-designer text-xl md:text:2xl lg:text-[35px] mb-4">
               Who We Are
             </h5>
 
@@ -61,33 +61,25 @@ const WhoWeAre = () => {
           </div>
 
         </div>
-<div className="
-  /* 1. POSITIONING (Keeping your layout logic) */
-  flex justify-center mt-10
-  md:absolute md:right-[10px] lg:right-[60px] md:-bottom-0 lg:-bottom-[210px] md:mt-0
-  
-  /* 2. EXACT SIZING (This fixes the overlap/mismatch) */
-  lg:w-[309px] lg:h-[316px] md:w-[175px] md:h-[175px] 
-  relative
-">
-  
-  {/* 3. THE IMAGE: Inside a wrapper with padding to create the white 'matte' look */}
-  <div className="absolute inset-0 p-4">
-    <img
-      src={img2}
-      alt="Modern House"
-     
-      className="w-full h-full object-cover" 
-    />
-  </div>
+        <div className="flex justify-center mt-10 absolute right-[10px] lg:right-[60px]  md:-bottom-0 lg:-bottom-[150px] xl:-bottom-[220px] md:mt-0 w-0 h-0 xl:w-[280px] xl:h-[287px] lg:w-[209px] lg:h-[209px] md:w-[175px] md:h-[175px]">
 
-  {/* 4. THE SVG FRAME: Matches the 309x316 container exactly */}
-  <img 
-    src="/svg2.svg" 
-    alt="" 
-    className="absolute inset-0 w-full h-full pointer-events-none z-10 scale-[1.01]"
-  />
-</div>
+          {/* 3. THE IMAGE: Inside a wrapper with padding to create the white 'matte' look */}
+          <div className="absolute inset-0 p-4">
+            <img
+              src={img2}
+              alt="Modern House"
+
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 4. THE SVG FRAME: Matches the 309x316 container exactly */}
+          <img
+            src="/svg2.svg"
+            alt=""
+            className="absolute inset-0 w-full h-full pointer-events-none z-10 scale-[1.01]"
+          />
+        </div>
 
       </div>
     </section>

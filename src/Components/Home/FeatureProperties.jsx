@@ -13,19 +13,19 @@ const FeatureProperties = () => {
 
   return (
     <div className="bg-[#f5f5f5] py-16">
-      <div className="max-w-[1440px] mx-auto px-[60px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px]">
         {/* HEADING */}
-        <h2 className="text-center text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
+        <h2 className="text-center text-xl md:text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
           Feature Properties
         </h2>
 
-        <p className="text-center text-gray-500 mt-3 font-[#333333] max-w-[700px] mx-auto text-[16px] font-lato">
+        <p className="text-center text-gray-500 mt-3 font-[#333333] max-w-[700px] mx-auto text-[16px]">
           To empower property investors with fast, flexible, and reliable
           private lending options that make every real estate project a success.
         </p>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mt-[30px]">
           {data.slice(0, 4).map((item) => {
             const image = item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
@@ -33,7 +33,7 @@ const FeatureProperties = () => {
               <div
                 key={item.id}
                 onClick={() => navigate(`/property/${item.id}`)}
-                className="relative rounded-xl overflow-hidden cursor-pointer group"
+                className="relative overflow-hidden cursor-pointer group"
               >
                 {/* IMAGE */}
                 <img
@@ -51,10 +51,10 @@ const FeatureProperties = () => {
                 </div>
 
                 {/* CONTENT */}
-                <div className="absolute bottom-0 w-full p-6 text-white">
+                <div className="absolute bottom-0 w-full px-4 py-5 text-white">
                   {/* TOP ROW */}
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-medium">
+                  <div className="flex flex-col lg:flex-row justify-between lg:items-center">
+                    <h3 className="text-base lg:text-[22px] font-medium">
                       {item.title.rendered}
                     </h3>
 
@@ -87,7 +87,7 @@ const FeatureProperties = () => {
                   </div>
 
                   {/* PRICE */}
-                  <p className="text-[25px] font-bold italic mt-3 font-designer">
+                  <p className="text-xl lg:text-[25px] font-bold italic mt-3 font-designer">
                     ${Number(item.acf?.price || 0).toLocaleString()}
                   </p>
                 </div>

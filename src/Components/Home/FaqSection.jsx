@@ -36,10 +36,10 @@ const FAQSection = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-[16px] sm:text-[30px] lg:text-[45px] font-black tracking-tighter text-gray-900 uppercase italic mb-4 font-designer">
+          <h2 className="text-xl tracking-widest sm:text-[30px] lg:text-[45px] font-black tracking-tighter text-gray-900 uppercase italic mb-4 font-designer">
             FREQUENTLY ASKED QUESTIONS
           </h2>
-          <p className="text-gray-600 text-xs md:text-sm max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Here's a professional FAQ section tailored for Johat Enterprises — focused on your 
             property investor and private lending matching services.
           </p>

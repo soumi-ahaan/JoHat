@@ -9,7 +9,7 @@ const Header = () => {
     <>
       {/* HEADER */}
       <header className="absolute w-full top-0 z-50">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-10 xl:px-[60px] py-[37px]">
+        <div className="max-w-[1440px] mx-auto  px-4 md:px-8 lg:px-12 xl:px-[60px] py-[37px]">
         <div className="bg-transparent md:bg-[#F8FFFB] rounded-full pl-4 pr-2 lg:px-4 xl:pl-[21px] xl:pr-[11px] py-2 lg:py-[11px] flex items-center justify-between relative md:shadow-sm">
 
           {/* LEFT MENU */}
@@ -72,8 +72,8 @@ const Header = () => {
             onClick={() => setOpen(true)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
