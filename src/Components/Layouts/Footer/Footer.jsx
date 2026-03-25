@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1C1C1C] text-white w-full relative overflow-hidden">
       {/* Container */}
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 xl:px-[60px] pt-[80px] pb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px] pt-[80px] pb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Links */}
         <div>
@@ -95,13 +95,13 @@ const Footer = () => {
         <div className="border-t border-white/0 w-full"></div>
 
         {/* Animated pulse line (inside 1440px container) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] px-5 md:px-8 xl:px-[60px]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] px-4 md:px-8 lg:px-12 xl:px-[60px]">
           <div className="h-[1px] bg-white w-full animate-pulse-line origin-center"></div>
         </div>
       </div>
 
       {/* Bottom */}
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-8 xl:px-[60px] py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px] py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-[12px] lg:text-[16px] font-medium text-center md:text-left">
           © 2026 Johat Enterprises - All Rights Reserved. Designed And Developed By
           <a href="https://ahaansoftware.com/" target="_blank" rel="noopener noreferrer" className="font-extrabold text-[16px] no-underline ml-1">
