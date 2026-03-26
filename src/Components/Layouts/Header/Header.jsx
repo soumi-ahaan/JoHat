@@ -61,7 +61,7 @@ const Header = () => {
 
           {/* RIGHT BUTTONS */}
           <div className="hidden md:flex items-center gap-2 xl:gap-[11px] xl:ml-[188px]">
-            <a href="" className="text-sm lg:text-base bg-gradient cursor-pointer text-white py-2.5 px-3 xl:px-[30px] xl:py-[20px] rounded-full">
+            <a href="" className="text-sm lg:text-base animate-btn cursor-pointer text-white py-2.5 px-3 xl:px-[30px] xl:py-[20px] rounded-full">
               Browse Properties
             </a>
           </div>
@@ -121,7 +121,7 @@ const Header = () => {
             >Contact Us</NavLink>
 
           
-          <button className="mx-6 bg-gradient text-white px-[20px] py-[12px] rounded-full">
+          <button className="mx-6 animate-btn text-white px-[20px] py-[12px] rounded-full">
             Browse Properties
           </button>
         </div>
