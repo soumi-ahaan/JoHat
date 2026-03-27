@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-
+import React, { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 const stepsData = [
   {
     id: 1,
@@ -30,12 +31,64 @@ const stepsData = [
 const HowWeWorks = () => {
   const [active, setActive] = useState(0);
 
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const imageRef = useRef(null);
+  useEffect(() => {
+ 
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+
+  // HEADING
+  tl.fromTo(
+    headingRef.current,
+    {
+      y: 60,
+      opacity: 0,
+      clipPath: "inset(0 100% 0 0)",
+    },
+    {
+      y: 0,
+      opacity: 1,
+      clipPath: "inset(0 0% 0 0)",
+      duration: 1.5,
+      ease: "power4.out",
+    }
+  );
+
+  // IMAGE
+  tl.from(
+    imageRef.current,
+    {
+      x: -120,
+      opacity: 0,
+      duration: 1.6,
+      ease: "power4.out",
+    },
+    "-=0.8"
+  );
+
+ 
+
+}, []);
+
+
+
+
   return (
-    <div className="bg-[#F4F1ED] py-20">
+    <div ref={sectionRef} className="bg-[#F4F1ED] py-20">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px]">
 
         {/* HEADING */}
-        <h2 className="text-center text-xl md:text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
+        <h2 ref={headingRef} className="text-center text-xl md:text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
           How We Works
         </h2>
 
@@ -49,7 +102,7 @@ const HowWeWorks = () => {
 
           <div className="grid md:grid-cols-2 gap-4">
             {/* LEFT IMAGE */}
-            <div className="h-[350px] md:h-[530px] lg:h-[490px] xl:h-[500px] overflow-hidden relative">
+            <div ref={imageRef} className="h-[350px] md:h-[530px] lg:h-[490px] xl:h-[500px] overflow-hidden relative">
               <img
                 key={active} // 🔥 IMPORTANT FIX
                 src={stepsData[active].image}
@@ -63,6 +116,7 @@ const HowWeWorks = () => {
               {stepsData.map((step, index) => (
                 <div
                   key={step.id}
+                  
                   onClick={() => setActive(index)}
                   className={`cursor-pointer px-6 py-4 transition-all duration-300 ${active === index
                     ? "bg-white text-black"

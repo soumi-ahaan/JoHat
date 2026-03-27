@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import homebanner from "../../assets/contactbanner.webp";
+import contactbanner from "../../assets/contactbanner.webp";
 
 export default function Hero() {
   const heroTextRef = useRef(null); // h1
   const subtitleRef = useRef(null); // subtitle
-  const pRef = useRef(null); // buttons container
+  const pRef = useRef(null); // paragraph
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -18,13 +18,7 @@ export default function Hero() {
       ease: "power2.out"
     });
 
-    // Slide up h1
-    tl.from(heroTextRef.current, {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, "+=0.2");
+    
 
     // Text gradient reveal after slide
     tl.to(heroTextRef.current, {
@@ -45,7 +39,7 @@ export default function Hero() {
   return (
     <section
       className="relative h-[440px]  md:h-[650px] w-full overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${homebanner})` }}
+      style={{ backgroundImage: `url(${contactbanner})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
 

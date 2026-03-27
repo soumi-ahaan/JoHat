@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {BedIcon, BathtubIcon, RulerIcon} from "@phosphor-icons/react";
 import { getProperties } from "../../Api/Api";
 import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const RecentSales = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+   const sectionRef = useRef(null);
+    const headingRef = useRef(null);
+    const cardsRef = useRef([]);
 
   // 🔥 DATE FORMAT FUNCTION
   const formatDate = (dateStr) => {
@@ -34,11 +39,59 @@ const RecentSales = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (!data.length) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // 🔥 HEADING TEXT REVEAL (gradient wipe)
+    tl.fromTo(
+      headingRef.current,
+      {
+        y: 80,
+        opacity: 0,
+        clipPath: "inset(0 100% 0 0)",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        clipPath: "inset(0 0% 0 0)",
+        duration: 1.4,
+        ease: "power4.out",
+      }
+    );
+
+    // 🔥 CARDS SLOW STAGGER (one by one)
+    tl.from(
+      cardsRef.current,
+      {
+        y: 120,
+        opacity: 0,
+        duration: 1.6,
+        ease: "power4.out",
+        stagger: 0.5, // 🐢 slow motion
+      },
+      "-=0.6"
+    );
+
+  }, [data]);
+
+  // reset refs every render
+  cardsRef.current = [];
+
   return (
-    <div className="bg-[#f5f5f5] py-16">
+    <div ref={sectionRef} className="bg-[#f5f5f5] py-16">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px]">
         {/* HEADING */}
-        <h2 className="text-center text-xl md:text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
+        <h2 ref={headingRef} className="text-center text-xl md:text-[35px] font-[#1c1c1c] font-bold tracking-[2px] uppercase font-designer">
           Our Recent Sales
         </h2>
 
@@ -49,12 +102,13 @@ const RecentSales = () => {
 
         {/* GRID */}
         <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mt-[30px]">
-          {data.slice(0, 4).map((item) => {
+          {data.slice(0, 4).map((item, index) => {
             const image = item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
             return (
               <div
                 key={item.id}
+                ref={(el) => (cardsRef.current[index] = el)}
                 onClick={() => navigate(`/property/${item.id}`)}
                 className="relative  overflow-hidden cursor-pointer group"
               >

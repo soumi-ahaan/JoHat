@@ -18,13 +18,7 @@ export default function Hero() {
       ease: "power2.out"
     });
 
-    // Slide up h1
-    tl.from(heroTextRef.current, {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, "+=0.2");
+    
 
     // Text gradient reveal after slide
     tl.to(heroTextRef.current, {
@@ -62,7 +56,7 @@ export default function Hero() {
         {/* Title */}
         <h1
           ref={heroTextRef}
-          className="text-xl min-[360px]:text-2xl min-[425px]:text-3xl md:text-4xl lg:text-[45px] leading-normal md:text-center font-designer bg-gradient-to-r from-gray-300 via-white to-gray-300 bg-[length:200%_100%] bg-clip-text text-transparent"
+          className="text-xl min-[360px]:text-2xl min-[425px]:text-3xl md:text-4xl lg:text-[45px] leading-normal md:text-center font-designer text-white"
           style={{ clipPath: "inset(0 100% 0 0)" }} // initial hidden
         >
           FUNDING SOLUTIONS FOR <br className="hidden md:flex" />

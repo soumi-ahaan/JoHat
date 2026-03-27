@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useForm } from "react-hook-form";
 import {
   PhoneCallIcon,
@@ -63,11 +65,46 @@ export default function ContactForm() {
   setShowCaptcha(false);
   generateCaptcha();
 };
+const sectionRef = useRef(null);
+const leftItemsRef = useRef([]);
+const rightItemsRef = useRef([]);
+useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
 
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 80%",
+      toggleActions: "play none none none", // no reverse
+    },
+  });
+
+  // LEFT SIDE (slide from left)
+  tl.from(leftItemsRef.current, {
+    x: -100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    stagger: 0.25,
+  });
+
+  // RIGHT SIDE (slide up)
+  tl.from(
+    rightItemsRef.current,
+    {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      stagger: 0.2,
+    },
+    "-=0.8"
+  );
+}, []);
   const required = { required: "This field is required" };
 
   return (
-   <section className=" bg-white relative pb-[54px]">
+   <section ref={sectionRef} className=" bg-white relative pb-[54px]">
         <div className="absolute w-full -top-[100px] ">
 <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px] ">
 
@@ -78,7 +115,7 @@ export default function ContactForm() {
         <div className="bg-[#1C1C1C] text-white py-10  px-4 md:px-8 lg:pl-10 lg:pr-10  xl:pr-[150px] relative overflow-hidden  ">
 
           {/* TOP CONTENT */}
-          <div>
+          <div ref={(el) => (leftItemsRef.current[0] = el)}>
             <h2 className="text-[28px] font-bold uppercase tracking-wide font-designer">
               Contact Information
             </h2>
@@ -86,14 +123,14 @@ export default function ContactForm() {
               Say something to start the contact
             </p>
           </div>
-          <div className="py-20 space-y-9 text-base ">
+          <div ref={(el) => (leftItemsRef.current[1] = el)} className="py-20 space-y-9 text-base ">
               <a href="tel:+123 456 7890" className="flex gap-[25px]"><PhoneCallIcon size={24} color="#ededed" weight="fill" /> +123 456 7890</a>
               <a href="mailto:johat1o11953@outlook.com" className="flex gap-[25px]"><EnvelopeSimpleIcon size={24}  color="#ededed" weight="fill"/> johat1o11953@outlook.com<br/>james@johatenterises.com</a>
               <a href="https://maps.app.goo.gl/tCoLd3a9tuKC99aN6" className="flex gap-[25px]"><MapPinIcon size={24} color="#ededed" weight="fill" /> 3975 Pulverwoods Rd, Williamsburg, MI <br/>49690, USA</a>
             </div>
 
           {/* BOTTOM ICONS */}
-          <div className="flex gap-4 pt-16 z-20">
+          <div ref={(el) => (leftItemsRef.current[2] = el)} className="relative flex gap-4 pt-16 z-20">
             <a href="https://facebook.com" className="p-2.5 border border-[#FFFFFF80] rounded-full flex items-center justify-center hover:scale-105"><FacebookLogoIcon size={24}/></a>
             <a href="https://x.com/JohatEnter3002" className="p-2.5 border border-[#FFFFFF80] rounded-full flex items-center justify-center hover:scale-105"><XLogoIcon size={24}/></a>
             <a href="https://www.instagram.com/accounts/login/?next=%2Fjohatenterprises%2F&source=omni_redirect" className="p-2.5 border border-[#FFFFFF80] rounded-full flex items-center justify-center hover:scale-105"><InstagramLogoIcon size={24}/></a>
@@ -101,7 +138,7 @@ export default function ContactForm() {
           </div>
 
           {/* DECORATIVE CIRCLES */}
-          <div className="absolute bottom-0 right-0 ">
+          <div className="absolute bottom-0 right-0 z-0">
             <div className="w-[259px] h-[259px] bg-[#2A2727] rounded-full translate-x-1/4 translate-y-1/4"></div>
             <div className="w-[128px] h-[128px] bg-[#48484880] rounded-full absolute bottom-[70px] right-[140px] "></div>
           </div>
@@ -116,10 +153,18 @@ export default function ContactForm() {
               >
 
                 {/* FIRST NAME */}
-                <div>
+                <div ref={(el) => (rightItemsRef.current[0] = el)}>
                   <label className="text-sm">First Name</label>
                   <input
-                    {...register("firstname", required)}
+                   
+                    {...register("firstname", {
+                      required: "Firstname is required",
+                      pattern: {
+                        value:
+                          /^[A-Za-z\s]+$/,
+                        message: "Only letters are allowed",
+                      },
+                    })}
                     className="w-full border-b py-2"
                   />
                   {errors.firstname && (
@@ -128,10 +173,17 @@ export default function ContactForm() {
                 </div>
 
                 {/* LAST NAME */}
-                <div>
+                <div ref={(el) => (rightItemsRef.current[1] = el)}>
                   <label className="text-sm">Last Name</label>
                   <input
-                    {...register("lastname", required)}
+                    {...register("lastname", {
+                      required: "Lastname is required",
+                      pattern: {
+                        value:
+                          /^[A-Za-z\s]+$/,
+                        message: "Only letters are allowed",
+                      },
+                    })}
                     className="w-full border-b py-2"
                   />
                   {errors.lastname && (
@@ -140,7 +192,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* EMAIL */}
-                <div>
+                <div ref={(el) => (rightItemsRef.current[2] = el)}>
                   <label className="text-sm">Email</label>
                   <input
                     {...register("email", {
@@ -159,7 +211,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* PHONE */}
-                <div>
+                <div ref={(el) => (rightItemsRef.current[3] = el)}>
                   <label className="text-sm">Phone</label>
                   <input
                     {...register("phone", {
@@ -226,7 +278,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* MESSAGE */}
-                <div className="md:col-span-2">
+                <div ref={(el) => (rightItemsRef.current[4] = el)} className="md:col-span-2">
                   <label className="text-sm">Message</label>
                   <textarea className="w-full border-b py-2"></textarea>
                 </div>
@@ -259,7 +311,7 @@ export default function ContactForm() {
 )}
 
                 {/* BUTTON */}
-                <div className="md:col-span-2 text-right">
+                <div ref={(el) => (rightItemsRef.current[5] = el)} className="md:col-span-2 text-right">
                   <button className="animate-btn text-white px-[30px] py-3 rounded-full">
                     Submit
                   </button>
