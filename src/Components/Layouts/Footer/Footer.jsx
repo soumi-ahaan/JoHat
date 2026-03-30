@@ -1,5 +1,5 @@
 import React from 'react'
-import { FacebookLogo, LinkedinLogoIcon, XLogo, InstagramLogo, CaretRight } from "@phosphor-icons/react";
+import { FacebookLogo, LinkedinLogoIcon, XLogo, InstagramLogo, CaretRight, PhoneCallIcon, EnvelopeSimpleIcon, MapPinIcon, } from "@phosphor-icons/react";
 
 const Footer = () => {
   return (
@@ -50,14 +50,55 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h3 className="font-designer text-[20px] font-normal mb-4">CONTACT US</h3>
-          <a href="tel:+12314272289" className="font-lato text-[16px] font-medium mb-5 block no-underline" target="_blank" rel="noopener noreferrer">+1-231-427-2289</a>
-          <a href="mailto:johat1011953@outlook.com" className="font-lato text-[16px] font-medium mb-5 block no-underline" target="_blank" rel="noopener noreferrer">johat1011953@outlook.com</a>
-          <a href="#" className="text-[16px] font-medium mb-5 block no-underline" target="_blank" rel="noopener noreferrer">james@johatenterises.com</a>
+          <a
+            href="tel:+12314272289/2314596853"
+            className="text-[16px] font-medium mb-5 flex items-center gap-2 no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <PhoneCallIcon size={24} color="#ededed" weight="fill" />
+            +1-231-427-2289/231-459-6853
+          </a>
+          <a
+            href="mailto:johat1011953@outlook.com"
+            className="font-lato text-[16px] font-medium mb-5 flex items-center gap-2 no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <EnvelopeSimpleIcon
+              size={24}
+              weight="fill"
+              className="text-[#ededed] flex-shrink-0"
+            />
+            johat1011953@outlook.com
+          </a>
+          <a
+            href="#"
+            className="text-[16px] font-medium mb-5 flex items-center gap-2 no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <EnvelopeSimpleIcon
+              size={24}
+              weight="fill"
+              className="text-[#ededed] flex-shrink-0"
+            />
+            james@johatenterises.com
+          </a>
 
           <h3 className="font-designer text-[20px] font-normal mb-4">LOCATION</h3>
-          <a href="https://maps.app.goo.gl/tCoLd3a9tuKC99aN6" target="_blank" rel="noopener noreferrer" className="font-lato text-[16px] font-medium no-underline block">
-            <span className="block">3975 Pulverwoods Rd,</span>
-            <span className="block">Williamsburg, MI 49690, USA</span>
+          <a
+            href="https://maps.app.goo.gl/tCoLd3a9tuKC99aN6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-lato text-[16px] font-medium no-underline flex items-start gap-2"
+          >
+            <MapPinIcon size={24} color="#ededed" weight="fill" />
+
+            <div className="flex flex-col leading-snug">
+              <span>3975 Pulverwoods Rd,</span>
+              <span>Williamsburg, MI 49690, USA</span>
+            </div>
           </a>
         </div>
 
