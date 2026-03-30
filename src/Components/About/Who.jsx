@@ -47,7 +47,7 @@ const Who = () => {
   }, []);
   return (
     <div className="bg-white py-12 md:py-20 lg:py-24">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-8 lg:px-12 xl:px-[60px] overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px] overflow-hidden">
 
         {/* MAIN FLEX: Stacked on mobile, side-by-side from lg (1024px) */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-8 xl:gap-18 items-center">
