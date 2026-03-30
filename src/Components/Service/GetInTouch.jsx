@@ -56,9 +56,9 @@ const socialLinks = [
               Williamsburg, MI 49690, USA
             </a>
 
-            <button className="border border-[#066478] text-[#066478] px-3 py-2 rounded-full hover:bg-[#066478] hover:text-white transition max-w-[180px]">
+            <a href="https://maps.app.goo.gl/tCoLd3a9tuKC99aN6" className="border border-[#066478] text-[#066478] px-3 py-2 rounded-full hover:bg-[#066478] hover:text-white transition max-w-[180px]">
               Get Directions
-            </button>
+            </a>
 
             {/* Social */}
             <div>
