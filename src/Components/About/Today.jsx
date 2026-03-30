@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const stepsData = [
   {
@@ -23,9 +25,40 @@ const stepsData = [
 
 const Today = () => {
   const [active, setActive] = useState(0);
+  const sectionRef = useRef(null);
+    const imageRef = useRef(null);
+    useEffect(() => {
+   
+  
+    gsap.registerPlugin(ScrollTrigger);
+  
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+  
+  
+    // IMAGE
+    tl.from(
+      imageRef.current,
+      {
+        x: -120,
+        opacity: 0,
+        duration: 1.6,
+        ease: "power4.out",
+      },
+      "-=0.8"
+    );
+  
+   
+  
+  }, []);
 
   return (
-    <div className="bg-[#F4F1ED] py-20">
+    <div ref={sectionRef} className="bg-[#F4F1ED] py-20">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px]">
 
         {/* HEADING */}
@@ -66,7 +99,7 @@ const Today = () => {
             </div>
 
             {/* LEFT IMAGE → NOW RIGHT */}
-            <div className="h-[274px] md:h-[405px] lg:h-[424px] xl:h-[382px] overflow-hidden relative order-1 md:order-2">
+            <div ref={imageRef} className="h-[274px] md:h-[405px] lg:h-[424px] xl:h-[382px] overflow-hidden relative order-1 md:order-2">
               <img
                 key={active}
                 src={stepsData[active].image}
