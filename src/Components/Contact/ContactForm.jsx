@@ -123,11 +123,44 @@ useEffect(() => {
               Say something to start the contact
             </p>
           </div>
-          <div ref={(el) => (leftItemsRef.current[1] = el)} className="py-20 space-y-9 text-base ">
-              <a href="tel:+1 2314596853/2314272289" className="flex gap-[25px]"><PhoneCallIcon size={24} color="#ededed" weight="fill" /> +1   2314596853 / 2314272289</a>
-              <a href="mailto:johat1o11953@outlook.com" className="flex gap-[25px]"><EnvelopeSimpleIcon size={24}  color="#ededed" weight="fill"/> johat1o11953@outlook.com<br/>james@johatenterises.com</a>
-              <a href="https://maps.app.goo.gl/tCoLd3a9tuKC99aN6" className="flex gap-[25px]"><MapPinIcon size={24} color="#ededed" weight="fill" /> 3975 Pulverwoods Rd, Williamsburg, MI <br/>49690, USA</a>
-            </div>
+         
+            <div ref={(el) => (leftItemsRef.current[1] = el)} className="py-20 space-y-9 text-base">
+
+  {/* PHONE */}
+  <div className="flex gap-[25px]">
+    <PhoneCallIcon size={24} color="#ededed" weight="fill" />
+
+    <div className="flex flex-col gap-2">
+      <a href="tel:+12314596853">+1 2314596853</a>
+      <a href="tel:+12314272289">+1 2314272289</a>
+    </div>
+  </div>
+
+  {/* EMAIL */}
+  <div className="flex gap-[25px]">
+    <EnvelopeSimpleIcon size={24} color="#ededed" weight="fill" />
+
+    <div className="flex flex-col gap-2">
+      <a href="mailto:johat1o11953@outlook.com">
+        johat1o11953@outlook.com
+      </a>
+      <a href="mailto:james@johatenterises.com">
+        james@johatenterises.com
+      </a>
+    </div>
+  </div>
+
+  {/* ADDRESS */}
+  <div className="flex gap-[25px]">
+    <MapPinIcon size={24} color="#ededed" weight="fill" />
+
+    <a href="https://maps.app.goo.gl/tCoLd3a9tuKC99aN6">
+      3975 Pulverwoods Rd, Williamsburg, MI <br />
+      49690, USA
+    </a>
+  </div>
+
+</div>
 
           {/* BOTTOM ICONS */}
           <div ref={(el) => (leftItemsRef.current[2] = el)} className="relative flex gap-4 pt-16 z-20">
