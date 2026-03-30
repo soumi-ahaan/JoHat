@@ -1,11 +1,15 @@
 import { useEffect, useRef } from "react";
+import {useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import homebanner from "../../assets/homebanner.webp";
 
 export default function Hero() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const heroTextRef = useRef(null); // h1
   const subtitleRef = useRef(null); // subtitle
   const buttonsRef = useRef(null); // buttons container
+
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -68,13 +72,23 @@ export default function Hero() {
           ref={buttonsRef}
           className="flex md:items-center md:justify-center gap-2.5 flex-wrap mt-3"
         >
-          <a href="/contact" className="border-flow relative overflow-hidden border border-white py-2.5 px-4 lg:px-[30px] lg:py-[20px] rounded-full text-center text-xs min-[375px]:text-base z-1">
+          <button  onClick={() => navigate("/contact")}  className="cursor-pointer border-flow relative overflow-hidden border border-white py-2.5 px-4 lg:px-[30px] lg:py-[20px] rounded-full text-center text-xs min-[375px]:text-base z-1">
             Contact Us
-          </a>
+          </button >
 
-          <a href="/#feature-properties" className="animate-btn text-white py-2.5 px-4 lg:px-[30px] lg:py-[20px] rounded-full text-center text-xs min-[375px]:text-base">
+          <button onClick={() => {
+    if (location.pathname === "/") {
+      // already on home → just scroll
+      const section = document.getElementById("feature-properties");
+      section?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // go to home with hash
+      navigate("/#feature-properties");
+    }
+    setOpen(false);
+  }}  className="cursor-pointer animate-btn text-white py-2.5 px-4 lg:px-[30px] lg:py-[20px] rounded-full text-center text-xs min-[375px]:text-base">
             Browse Properties
-          </a>
+          </button>
         </div>
 
       </div>
