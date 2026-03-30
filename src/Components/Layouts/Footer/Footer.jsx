@@ -50,15 +50,35 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h3 className="font-designer text-[20px] font-normal mb-4">CONTACT US</h3>
-          <a
-            href="tel:+12314272289/2314596853"
-            className="text-[16px] font-medium mb-5 flex items-center gap-2 no-underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PhoneCallIcon size={24} color="#ededed" weight="fill" />
-            +1-231-427-2289/231-459-6853
-          </a>
+          <div className="flex items-start gap-2 mb-5">
+
+  {/* ICON (only once) */}
+  <PhoneCallIcon
+    size={24}
+    weight="fill"
+    className="text-[#ededed] flex-shrink-0 mt-[2px]"
+  />
+
+  {/* PHONE NUMBERS */}
+  <div className="flex flex-col gap-1">
+
+    <a
+      href="tel:+12314272289"
+      className="text-[16px] font-medium no-underline"
+    >
+      +1-231-427-2289
+    </a>
+
+    <a
+      href="tel:+12314596853"
+      className="text-[16px] font-medium no-underline"
+    >
+      +1-231-459-6853
+    </a>
+
+  </div>
+
+</div>
           <div className="flex items-start gap-2 mb-5">
 
             {/* ICON (only once) */}
