@@ -4,12 +4,12 @@ import { Plus, Minus } from "@phosphor-icons/react";
 const FAQData = [
   {
     id: 1,
-    question: "1. What does Johat Enterprises do?",
+    question: "1. What does Johat Enterprises LLC do?",
     answer: "We connect property investors with trusted private money lenders. Our services include consultation, paperwork assistance, and lender matching to help investors secure funding for property purchases, renovations, and flips."
   },
   {
     id: 2,
-    question: "2. Who can apply for funding through Johat Enterprises?",
+    question: "2. Who can apply for funding through Johat Enterprises LLC?",
     answer: "Any property investor, from beginners to seasoned professionals, looking for private capital for real estate projects can apply."
   },
   {
@@ -40,7 +40,7 @@ const FAQSection = () => {
             FREQUENTLY ASKED QUESTIONS
           </h2>
           <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-            Here's a professional FAQ section tailored for Johat Enterprises — focused on your 
+            Here's a professional FAQ section tailored for Johat Enterprises LLC — focused on your 
             property investor and private lending matching services.
           </p>
         </div>

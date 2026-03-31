@@ -40,11 +40,11 @@ const AboutJames = () => {
                             {/* DESCRIPTION */}
                             <p className="font-normal text-sm md:text-base lg:text-lg xl:text-[20px] text-[#FFFFFFCC] leading-relaxed pt-2 sm:pt-0">
                                 James Taylor is the driving force behind{" "}
-                                <span className="font-medium text-white">Johat Enterprises</span>, bringing years of experience in real estate investment and private lending consultation. His mission is to help property investors access the right funding solutions quickly, securely, and strategically.
+                                <span className="font-medium text-white">Johat Enterprises LLC</span>, bringing years of experience in real estate investment and private lending consultation. His mission is to help property investors access the right funding solutions quickly, securely, and strategically.
                                 <br />
                                 With a deep understanding of the real estate market and strong relationships with trusted private lenders, James ensures every client receives personalized guidance and reliable financial support.
                                 <br />
-                                At <span className="font-medium text-white">Johat Enterprises</span>, James leads with integrity and results — making sure every project runs smoothly from application to approval.
+                                At <span className="font-medium text-white">Johat Enterprises LLC</span>, James leads with integrity and results — making sure every project runs smoothly from application to approval.
                             </p>
 
                         </div>

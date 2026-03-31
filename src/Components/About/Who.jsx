@@ -77,7 +77,7 @@ const Who = () => {
             </h2>
 
             <p className="mt-2 lg:mt-6 text-sm lg:text-lg text-[#555555] leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Johat Enterprises is a trusted name in property investment funding
+              Johat Enterprises LLC is a trusted name in property investment funding
               solutions. Based in Williamsburg, Michigan, we specialize in connecting
               property investors with private lenders who understand their needs.
             </p>

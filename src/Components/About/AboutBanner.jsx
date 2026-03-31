@@ -64,7 +64,7 @@ export default function Hero() {
                 {/* NEW PARAGRAPH */}
                 <p className="font-bold text-[14px] min-[360px]:text-[15px] md:text-[18px] lg:text-[20px] text-white leading-relaxed max-w-[900px]
         ">
-                    At Johat Enterprises, we connect investors with the right funding solutions to help them grow, scale, and succeed in real estate.
+                    At Johat Enterprises LLC, we connect investors with the right funding solutions to help them grow, scale, and succeed in real estate.
                 </p>
 
 
