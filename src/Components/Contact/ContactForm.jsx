@@ -313,7 +313,7 @@ useEffect(() => {
                 {/* MESSAGE */}
                 <div ref={(el) => (rightItemsRef.current[4] = el)} className="md:col-span-2">
                   <label className="text-sm">Message</label>
-                  <textarea className="w-full border-b py-2"></textarea>
+                  <textarea {...register("message")} className="w-full border-b py-2"></textarea>
                 </div>
 
                 {/* CAPTCHA */}
@@ -345,7 +345,7 @@ useEffect(() => {
 
                 {/* BUTTON */}
                 <div ref={(el) => (rightItemsRef.current[5] = el)} className="md:col-span-2 text-right">
-                  <button className="animate-btn text-white px-[30px] py-3 rounded-full">
+                  <button className="animate-btn text-white px-[30px] py-3 rounded-full cursor-pointer">
                     Submit
                   </button>
                 </div>
