@@ -51,27 +51,18 @@ const HomeownerStories = () => {
 
   return (
     <section className="bg-[#F4F1ED] py-24">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px]">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[60px] overflow-hidden">
 
         {/* TITLE */}
         <h2 className="uppercase tracking-widest text-xl md:text-[35px] font-normal mb-[20px] font-designer">
           Homeowner Stories
         </h2>
 
-        <div className="mb-[55px] w-full">
-          <svg
-            viewBox="0 0 1321 2"
-            preserveAspectRatio="none"
-            className="w-full h-[2px]"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 1 H1321"
-              stroke="#FACA51"
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
+        <div className=" mb-[55px] w-full">
+          <img
+  src="/linesvg.svg"
+  className="w-full h-auto"
+/>
         </div>
 
         <Swiper
@@ -82,28 +73,52 @@ const HomeownerStories = () => {
         >
           {data.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="flex flex-col md:flex-row gap-2 md:gap-4 lg:gap-12  items-center md:items-start">
 
-                {/* LEFT IMAGE */}
-                <div className="border border-[#d4af37] p-3">
-                  <img
-                    src={item.clientImg}
-                    alt="client"
-                    className="w-full h-[628px] object-cover"
-                  />
-                </div>
+                {/* 1. PARENT: Set the definitive size here */}
+                {/* 1. PARENT: Explicitly set the "Stage" size */}
+                <div className="relative w-full max-w-[571px] min-h-[150px] md:min-h-[350px] lg:min-h-[420px] xl:min-w-[600px] aspect-[15/16]">
 
+  {/* Image */}
+  <div className="p-3 lg:p-5 w-full h-full">
+    <img
+      src={item.clientImg}
+      alt="client"
+      className="w-full h-full object-cover block rounded-sm shadow-sm"
+    />
+  </div>
+
+  {/* SVG frame */}
+  <img
+    src="/aboutsvg.svg"
+    alt=""
+    className="absolute inset-0 w-full h-full pointer-events-none z-10 object-fill"
+  />
+
+</div>
                 {/* RIGHT CONTENT */}
                 <div>
 
                   {/* PROPERTY IMAGE */}
-                  <div className="border border-[#d4af37] p-3 mb-[44px]">
-                    <img
-                      src={item.propertyImg}
-                      alt="property"
-                      className="w-full h-[324px] object-cover"
-                    />
-                  </div>
+                  <div className="relative w-full aspect-[16/8.5] mb-[44px] box-border">
+  
+  {/* Image wrapper */}
+  <div className="p-3 w-full h-full">
+    <img
+      src={item.propertyImg}
+      alt="property"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* SVG overlay */}
+  <img
+    src="/propertysvg.svg"
+    alt=""
+    className="absolute inset-0 w-full h-full pointer-events-none z-10"
+  />
+
+</div>
 
                   {/* DESCRIPTION */}
                   <p className="text-[#333333] font-normal leading-[28px] text-[18px] mb-6">
