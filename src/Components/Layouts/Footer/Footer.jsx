@@ -209,7 +209,7 @@ const Footer = () => {
       </div>
 
       {/* Background Text */}
-      <h1 className="relative bottom-[20px] left-0 w-full text-center font-designer font-normal text-white/10 leading-none select-none pointer-events-none text-[25px] md:text-[40px] lg:text-[65px] xl:text-[85px] 2xl:text-[100px]">
+      <h1 className="relative bottom-[20px] left-0 w-full text-center font-designer font-normal text-white/10 leading-none select-none pointer-events-none text-[25px] md:text-[40px] lg:text-[65px] xl:text-[80px] [@media(min-width:1440px)]:text-[95px] 2xl:text-[100px]">
         JOHAT ENTERPRISES LLC
       </h1>
 
