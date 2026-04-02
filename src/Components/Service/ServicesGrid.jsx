@@ -106,7 +106,7 @@ const ServicesGrid = () => {
                 </svg>
 
 
-                <div className="absolute flex items-center justify-center overflow-hidden w-auto h-auto  p-3 ">
+                <div className="absolute flex items-center justify-center overflow-hidden w-full h-full p-3">
                   <img
                     src={item.image}
                     alt={item.title}
