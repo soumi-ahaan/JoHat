@@ -58,7 +58,7 @@ const location = useLocation();
             <a href="/" className="text-decoration-none"><img
               src={logo}
               alt="logo"
-              className="w-[75px] h-[75px] lg:w-[119px] lg:h-[119px] xl:w-[139px] xl:h-[139px]  object-contain shadow-sm rounded-full"
+              className="w-[65px] h-[65px] lg:w-[119px] lg:h-[119px] xl:w-[139px] xl:h-[139px]  object-contain shadow-sm rounded-full"
             /></a>
           </div>
 
