@@ -10,7 +10,7 @@ const HomeownerStories = () => {
   const getImageById = async (id) => {
     try {
       const res = await fetch(
-        `https://johat.ahaanmedia.com/wp-json/wp/v2/media/${id}`
+        `https://admin.johat-enterprises.com/wp-json/wp/v2/media/${id}`
       );
       const img = await res.json();
       return img.source_url;
@@ -23,7 +23,7 @@ const HomeownerStories = () => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        "https://johat.ahaanmedia.com/wp-json/wp/v2/testimonials"
+        "https://admin.johat-enterprises.com/wp-json/wp/v2/testimonials"
       );
       const testimonials = await res.json();
 

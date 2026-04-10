@@ -1,4 +1,4 @@
-const BASE_URL = "https://johat.ahaanmedia.com/wp-json/wp/v2";
+const BASE_URL = "https://admin.johat-enterprises.com/wp-json/wp/v2";
 
 // 👉 Get all properties
 export const getProperties = async () => {
