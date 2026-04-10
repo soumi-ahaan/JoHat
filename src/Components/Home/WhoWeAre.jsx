@@ -64,10 +64,10 @@ const WhoWeAre = () => {
 
           {/* LEFT IMAGE */}
           {/* 1. Main Container: Fixed to your SVG's 453:539 aspect ratio */}
-          <div ref={leftImgRef} className="relative  w-full max-w-[200px] lg:max-w-[450px] aspect-[453/539] overflow-visible">
+          <div ref={leftImgRef} className="relative  w-full max-w-[200px] lg:max-w-[450px] aspect-[7.2/8] overflow-visible">
 
             {/* 2. The Kitchen Image: We use padding (p-4) to create that white border look */}
-            <div className="absolute inset-0 p-[5%] lg:p-8">
+            <div className="absolute inset-0 p-[5%]">
               <img
                 src={img1}
                 alt="Modern Kitchen"
@@ -77,7 +77,7 @@ const WhoWeAre = () => {
 
             {/* 3. The SVG Frame: Overlaying everything */}
             <img
-              src="/svg.svg"
+              src="/aboutsvg.svg"
               alt=""
               className="absolute inset-0 w-full h-full pointer-events-none z-10 scale-[1.02]"
             />
@@ -128,7 +128,7 @@ const WhoWeAre = () => {
 
           {/* 4. THE SVG FRAME: Matches the 309x316 container exactly */}
           <img
-            src="/svg2.svg"
+            src="/aboutsvg.svg"
             alt=""
             className="absolute inset-0 w-full h-full pointer-events-none z-10 scale-[1.01]"
           />

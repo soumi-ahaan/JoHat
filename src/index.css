@@ -8,7 +8,7 @@ body{
 /* Custom font */
 @font-face {
   font-family: 'designer';
-  src: url('./assets/fonts/Designer.otf') format('opentype');
+  src: url('/Designer.otf') format('opentype');
 }
 
 .font-designer {
