@@ -42,9 +42,15 @@ export default function Hero() {
 
   return (
     <section
-      className="relative h-[440px] min-[360px]:h-[520px] md:h-[650px] lg:h-[850px] w-full overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${homebanner})` }}
+      className="relative h-[520px] md:h-[650px] lg:h-[850px] w-full overflow-hidden bg-cover bg-center"
     >
+        <img
+    src={homebanner}
+    alt="hero"
+    className="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    fetchpriority="high"
+  />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
 
       <div className="absolute inset-0 flex flex-col gap-3 md:gap-5 justify-center lg:justify-end md:items-center md:text-center text-white px-6 pt-20 lg:py-[100px] lg:pb-[120px]">

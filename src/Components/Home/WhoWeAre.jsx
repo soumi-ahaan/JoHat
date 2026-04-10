@@ -57,7 +57,7 @@ const WhoWeAre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#f4f1ee] py-20 lg:py-40 px-4">
+    <section ref={sectionRef} className="bg-[#f4f1ee] py-20 lg:py-40 px-4 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-12 xl:px-15 relative">
 
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-center md:items-start">
