@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Header from "./Components/Layouts/Header/Header";
 import Footer from "./Components/Layouts/Footer/Footer";
-
 import HomeComponents from "./Components/Home/HomeComponents";
 import AboutComponents from "./Components/About/AboutComponents";
 import ServiceComponents from "./Components/Service/ServiceComponents";

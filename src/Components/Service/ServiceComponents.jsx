@@ -18,5 +18,4 @@ const ServiceComponents = () => {
     </div>
   )
 }
-
 export default ServiceComponents
